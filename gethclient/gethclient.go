@@ -28,7 +28,7 @@ import (
 	"github.com/weijun-sh/eth-ethclient/common/hexutil"
 	"github.com/weijun-sh/eth-ethclient/types"
 	"github.com/weijun-sh/eth-ethclient/types/ethereum"
-	rpc "github.com/weijun-sh/gethrpc"
+	rpc "github.com/jowenshaw/gethrpc"
 )
 
 // Client is a wrapper around rpc.Client that implements geth-specific functionality.

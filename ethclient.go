@@ -28,7 +28,7 @@ import (
 	"github.com/weijun-sh/eth-ethclient/common"
 	"github.com/weijun-sh/eth-ethclient/common/hexutil"
 	"github.com/weijun-sh/eth-ethclient/types"
-	rpc "github.com/weijun-sh/gethrpc"
+	rpc "github.com/jowenshaw/gethrpc"
 )
 
 // Client defines typed wrappers for the Ethereum RPC API.
