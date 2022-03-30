@@ -24,7 +24,6 @@ import (
 
 	"github.com/weijun-sh/eth-ethclient/common"
 	"github.com/weijun-sh/eth-ethclient/crypto"
-	"github.com/weijun-sh/eth-ethclient/params"
 )
 
 var ErrInvalidChainId = errors.New("invalid chain id for signer")
@@ -37,43 +36,21 @@ type sigCache struct {
 }
 
 // MakeSigner returns a Signer based on the given chain config and block number.
-func MakeSigner(config *params.ChainConfig, blockNumber *big.Int) Signer {
+func MakeSigner(signType string, chainID *big.Int) Signer {
 	var signer Signer
-	switch {
-	case config.IsLondon(blockNumber):
-		signer = NewLondonSigner(config.ChainID)
-	case config.IsBerlin(blockNumber):
-		signer = NewEIP2930Signer(config.ChainID)
-	case config.IsEIP155(blockNumber):
-		signer = NewEIP155Signer(config.ChainID)
-	case config.IsHomestead(blockNumber):
+	switch signType{
+	case "London":
+		signer = NewLondonSigner(chainID)
+	case "Berlin":
+		signer = NewEIP2930Signer(chainID)
+	case "EIP155":
+		signer = NewEIP155Signer(chainID)
+	case "Homestead":
 		signer = HomesteadSigner{}
 	default:
 		signer = FrontierSigner{}
 	}
 	return signer
-}
-
-// LatestSigner returns the 'most permissive' Signer available for the given chain
-// configuration. Specifically, this enables support of EIP-155 replay protection and
-// EIP-2930 access list transactions when their respective forks are scheduled to occur at
-// any block number in the chain config.
-//
-// Use this in transaction-handling code where the current block number is unknown. If you
-// have the current block number available, use MakeSigner instead.
-func LatestSigner(config *params.ChainConfig) Signer {
-	if config.ChainID != nil {
-		if config.LondonBlock != nil {
-			return NewLondonSigner(config.ChainID)
-		}
-		if config.BerlinBlock != nil {
-			return NewEIP2930Signer(config.ChainID)
-		}
-		if config.EIP155Block != nil {
-			return NewEIP155Signer(config.ChainID)
-		}
-	}
-	return HomesteadSigner{}
 }
 
 // LatestSignerForChainID returns the 'most permissive' Signer available. Specifically,
