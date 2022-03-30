@@ -23,10 +23,10 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/params"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/weijun-sh/eth-ethclient/common"
+	"github.com/weijun-sh/eth-ethclient/crypto"
+	"github.com/weijun-sh/eth-ethclient/params"
+	"github.com/weijun-sh/eth-ethclient/rlp"
 )
 
 var (

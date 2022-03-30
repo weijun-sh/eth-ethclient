@@ -25,10 +25,10 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/math"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/weijun-sh/eth-ethclient/common"
+	"github.com/weijun-sh/eth-ethclient/common/math"
+	"github.com/weijun-sh/eth-ethclient/crypto"
+	"github.com/weijun-sh/eth-ethclient/rlp"
 )
 
 var (

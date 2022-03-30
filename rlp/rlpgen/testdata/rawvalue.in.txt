@@ -2,7 +2,7 @@
 
 package test
 
-import "github.com/ethereum/go-ethereum/rlp"
+import "github.com/weijun-sh/eth-ethclient/rlp"
 
 type Test struct {
 	RawValue          rlp.RawValue

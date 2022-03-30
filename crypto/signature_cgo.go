@@ -24,8 +24,8 @@ import (
 	"crypto/elliptic"
 	"fmt"
 
-	"github.com/ethereum/go-ethereum/common/math"
-	"github.com/ethereum/go-ethereum/crypto/secp256k1"
+	"github.com/weijun-sh/eth-ethclient/common/math"
+	"github.com/weijun-sh/eth-ethclient/crypto/secp256k1"
 )
 
 // Ecrecover returns the uncompressed public key that created the given signature.
