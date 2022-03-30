@@ -23,7 +23,6 @@ import (
 	"runtime"
 	"runtime/debug"
 
-	"github.com/weijun-sh/eth-ethclient"
 	"github.com/weijun-sh/eth-ethclient/common"
 	"github.com/weijun-sh/eth-ethclient/common/hexutil"
 	"github.com/weijun-sh/eth-ethclient/types"
